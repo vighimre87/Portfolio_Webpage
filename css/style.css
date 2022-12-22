@@ -1,3 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+
+  ol, ul {
+	list-style: none;
+}
+
 /* Navbar section */
 #navbar {
     display: flex;
@@ -7,7 +35,6 @@
 
 /* style the links inside the navbar */
 #navbar a {
-
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -20,11 +47,30 @@
     color: black;
 }
 
+/* Hero Banner */
+.hero-banner {
+  background-image: url("../images/02-hero-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 0.75;
+}
+
+#hero-text h2 {
+  padding: 2rem;
+  color: cadetblue;
+  border: 1px solid goldenrod;
+  outline-offset: -1px;
+}
+
 /* About Section */
-#aboutGrid {
+#about {
     display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 300px;
+    grid-template-columns: 15% 75%;
+    grid-template-rows: 100%;
     grid-template-areas: "about-me-heading about-me-text";
     justify-items: center;
 }
@@ -37,52 +83,93 @@
     grid-area: about-me-text;
 }
 
-/* Works Section */
-#worksGrid {
+/* Work Section */
+#work {
     display: grid;
-    grid-template-rows: 500px 300px 300px;
-    grid-template-columns: 25% 37.5% 37.5%;
+    grid-template-rows: 100% 100% 100%;
+    grid-template-columns: 15% 37.5% 37.5%;
     grid-template-areas:
-    "works-heading surf-report surf-report"
-    "works-heading led-wall calculator"
-    "works-heading pastel-puzzles run-buddy";
+    "work-heading surf-report surf-report"
+    "work-heading led-wall calculator"
+    "work-heading pastel-puzzles run-buddy";
     justify-items: center;
 }
 
-#works-heading {
-    grid-area: works-heading;
+#work-heading {
+    grid-area: work-heading;
 }
 
 #surf-report {
     grid-area: surf-report;
+    background-image: url("../images/02-portfolio-4.jpg");
 }
 
 #led-wall {
     grid-area: led-wall;
+    background-image: url("../images/02-portfolio-1.jpg");
 }
 
 #calculator {
     grid-area: calculator;
+    background-image: url("../images/02-portfolio-2.jpg");
 }
 
 #pastel-puzzles {
     grid-area: pastel-puzzles;
+    background-image: url("../images/02-portfolio-3.jpg");
 }
 
 #run-buddy {
     grid-area: run-buddy;
+    background-image: url("../images/02-run-buddy.jpg");
 }
 
-/* Contact Me section */
+.workGridArea {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  cursor: pointer;
+  align-content: flex-end;
+  margin: 5px;
+}
+
+/* Contact section */
 #contact {
     display: grid;
-    grid-template-rows: 150px;
-    grid-template-columns: 25% 15% 15% 15% 15%;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 10% 10% 10% 10%;
     grid-template-areas:
-    "website github twitter email";
+    "contact-heading website github twitter email";
     justify-items: center;
 }
 
-footer {
-    text-align: center;
+#contact-heading {
+  grid-area: contact-heading;
+}
+
+#website {
+  grid-area: website;
+}
+
+#github {
+  grid-area: github;
+}
+
+#twitter {
+  grid-area: twitter;
+}
+
+#email {
+  grid-area: email;
+}
+
+.sectionHeading {
+  border-right: 5px solid mediumaquamarine;
+  padding-right: 15px;
+}
+
+.page-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
