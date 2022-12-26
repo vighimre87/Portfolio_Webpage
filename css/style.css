@@ -23,49 +23,90 @@
   }
 
   ol, ul {
-	list-style: none;
+	list-style-type: none;
 }
 
-/* Navbar section */
-#navbar {
-    display: flex;
-    flex-direction: row;
-    margin: 0px 5%;
+/* Header Section */
+
+li {
+  display: inline-block;
+  margin-left: 25px;
 }
+
+header {
+  background-color: rgb(55, 45, 45);
+  padding: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(88, 88, 176);
+}
+
+header h1 {
+  display: inline-block;
+  font-size: 40px;
+}
+
+#navbar {
+  float: right;
+  color: blue;
+  padding-top: 15px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
 
 /* style the links inside the navbar */
 #navbar a {
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  color: rgb(88, 88, 176);
 }
 
 /* change the color of the links on hover */
-.navbar a:hover {
+#navbar a:hover {
     background-color: #333;
     color: black;
+}
+
+/* Styling the main content */
+.page-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Hero Banner */
 .hero-banner {
   background-image: url("../images/02-hero-bg.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 200px;
+  height: 300px;
+  width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
   opacity: 0.75;
+  position: relative;
+  justify-items: flex-end;
+}
+
+#profile-pic img {
+  position: absolute;
+  display: flex;
+  width: 200px;
+  length: 200px!;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#hero-text {
+  position: absolute;
+  color: #333;
+  background-color: rgb(88, 88, 176);
+  float: right;
+  padding: 2px;
 }
 
 #hero-text h2 {
-  padding: 2rem;
-  color: cadetblue;
-  border: 1px solid goldenrod;
-  outline-offset: -1px;
+  font-size: 28px;
+  color: #333;
+  display: block;
 }
-
 /* About Section */
 #about {
     display: grid;
@@ -77,6 +118,7 @@
 
 #about-me-heading {
     grid-area: about-me-heading;
+    text-align: right;
 }
 
 #about-me-text {
@@ -169,7 +211,3 @@
   padding-right: 15px;
 }
 
-.page-section {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
