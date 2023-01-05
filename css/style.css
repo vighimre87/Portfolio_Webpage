@@ -1,6 +1,7 @@
 /* Variables */
 :root {
   --cyan-color: rgb(92, 154, 161);
+  --bckgrnd-blck: rgb(55, 45, 45);
 }
 
 
@@ -36,8 +37,8 @@ li {
 /* Header with Navbar */
 
 header {
-  background-color: rgb(55, 45, 45);
-  padding: 20px;
+  background-color: var(--bckgrnd-blck);
+  padding: 20px 20px 20px 0px;
   height: 100%;
   width: 100%;
 }
@@ -55,8 +56,9 @@ header {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 25px;
-  color: var(--cyan-color);
-  padding: 10px 10px 10px 10px;
+  color: var(--bckgrnd-blck);
+  padding: 10px 10px 10px 50px;
+  background-color: var(--cyan-color);
 }
 
 .nav > .nav-btn {
@@ -104,7 +106,7 @@ header {
   }
 
   .nav > .nav-btn > label:hover,.nav #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(81, 71, 71, 0.4);
   }
 
   .nav > .nav-btn > label > span {
@@ -144,46 +146,57 @@ header {
 
 /* Styling the main content */
 .page-section {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 30px 20px 50px;
 }
 
 /* Hero Banner */
-.hero-banner {
-  background-image: url("../images/02-hero-bg.jpg");
+#heroGrid {
+  background-image: linear-gradient(rgba(49, 109, 144, 0.349), rgba(49, 109, 144, 0.349)), url("../images/02-hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 100%;
   width: 100%;
-  display: flex;
-  opacity: 0.75;
-  position: relative;
-  justify-items: flex-end;
+  display: grid;
+  grid-template-rows: 300px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "hero-image hero-text";
 }
 
-#profile-pic img {
-  position: absolute;
+#hero-image {
+  grid-area: hero-image;
+  position: relative;
   display: flex;
-  width: 200px;
-  length: 200px!;
+  align-items: center;
+  margin-left: 50px;
+}
+
+#hero-image img {
+  position: absolute;
   overflow: hidden;
   border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 #hero-text {
-  position: absolute;
-  color: #333;
-  background-color: rgb(88, 88, 176);
-  float: right;
-  padding: 2px;
+  grid-area: hero-text;
+  margin-bottom: 30px;
+  margin-right: 50px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #hero-text h2 {
-  font-size: 28px;
-  color: #333;
-  display: block;
+  font-size: 30px;
+  color: var(--bckgrnd-blck);
+  background-color: var(--cyan-color);
+  padding: 5px;
 }
+
 /* About Section */
 #about {
     display: grid;
