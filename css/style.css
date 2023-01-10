@@ -2,9 +2,11 @@
 :root {
   --cyan-color: rgb(92, 154, 161);
   --bckgrnd-blck: rgb(55, 45, 45);
+  --bckgrnd-transition: linear-gradient(rgba(49, 109, 144, 0.349), rgba(49, 109, 144, 0.349));
 }
 
 
+/* General CSS rules */
 * {
     box-sizing: border-box;
   }
@@ -13,6 +15,7 @@ body {
     margin: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5rem;
+    color: var(--bckgrnd-blck);
 }
   
 h1,
@@ -26,7 +29,8 @@ h6 {
   
 p {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 14px;
 }
 
 
@@ -34,8 +38,24 @@ li {
   list-style: none;
 }
 
-/* Header with Navbar */
+a {
+  text-decoration: none;
+}
 
+/* Styling the main content */
+.page-section {
+  min-width: 100%;
+  height: 100%;
+  padding: 50px 30px 50px 30px;
+  justify-content: center;
+}
+
+.vertical-line {
+  border-left: 5px solid var(--cyan-color);
+}
+
+
+/* Header with Navbar */
 header {
   background-color: var(--bckgrnd-blck);
   padding: 20px 20px 20px 0px;
@@ -65,6 +85,7 @@ header {
   display: none;
 }
 
+
 /* Styling the nav links */
 .nav > .nav-links {
   display: inline;
@@ -75,7 +96,6 @@ header {
 .nav > .nav-links > a {
   display: inline-block;
   padding: 15px 10px 15px 10px;
-  text-decoration: none;
   color: var(--cyan-color);
   border-bottom: 3px solid var(--cyan-color);
 }
@@ -144,21 +164,16 @@ header {
 }
 
 
-/* Styling the main content */
-.page-section {
-  padding: 20px 30px 20px 50px;
-}
-
 /* Hero Banner */
 #heroGrid {
-  background-image: linear-gradient(rgba(49, 109, 144, 0.349), rgba(49, 109, 144, 0.349)), url("../images/02-hero-bg.jpg");
+  background-image: var(--bckgrnd-transition), url("../images/02-hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 300px;
+  grid-template-rows: 200px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "hero-image hero-text";
 }
@@ -197,87 +212,118 @@ header {
   padding: 5px;
 }
 
-/* About Section */
+
+/* About Me section */
 #about {
     display: grid;
-    grid-template-columns: 15% 75%;
+    grid-template-columns: 5% 5% 80%;
     grid-template-rows: 100%;
-    grid-template-areas: "about-me-heading about-me-text";
+    grid-template-areas: "aboutHeading first-line aboutText";
     justify-items: center;
 }
 
-#about-me-heading {
-    grid-area: about-me-heading;
-    text-align: right;
+#aboutHeading {
+    grid-area: aboutHeading;
+    display: flex;
+    justify-items: flex-end;
 }
 
-#about-me-text {
-    grid-area: about-me-text;
+#first-line {
+  grid-area: first-line;
 }
+
+#aboutText {
+    grid-area: aboutText;
+}
+
 
 /* Work Section */
 #work {
     display: grid;
-    grid-template-rows: 100% 100% 100%;
-    grid-template-columns: 15% 37.5% 37.5%;
+    grid-template-rows: 200px 150px 150px;
+    grid-template-columns: 5% 5% 40% 40%;
     grid-template-areas:
-    "work-heading surf-report surf-report"
-    "work-heading led-wall calculator"
-    "work-heading pastel-puzzles run-buddy";
-    justify-items: center;
+    "workHeading second-line rock-paper-scissors rock-paper-scissors"
+    "workHeading second-line travel-california css-snippets"
+    "workHeading second-line landing-page prework";
 }
 
-#work-heading {
-    grid-area: work-heading;
+#workHeading {
+    grid-area: workHeading;
 }
 
-#surf-report {
-    grid-area: surf-report;
-    background-image: url("../images/02-portfolio-4.jpg");
+#second-line {
+  grid-area: second-line;
 }
 
-#led-wall {
-    grid-area: led-wall;
-    background-image: url("../images/02-portfolio-1.jpg");
+#rock-paper-scissors {
+    grid-area: rock-paper-scissors;
+    background-image: url("../images/rock-paper-scissors.png");
+    align-content: flex-end;
+    padding-bottom: 20px;
 }
 
-#calculator {
-    grid-area: calculator;
-    background-image: url("../images/02-portfolio-2.jpg");
+#travel-california {
+    grid-area: travel-california;
+    background-image: url("../images/california.jpg");
 }
 
-#pastel-puzzles {
-    grid-area: pastel-puzzles;
-    background-image: url("../images/02-portfolio-3.jpg");
+#css-snippets {
+    grid-area: css-snippets;
+    background-image: url("../images/CSS_Cheat_Sheet.png");
 }
 
-#run-buddy {
-    grid-area: run-buddy;
-    background-image: url("../images/02-run-buddy.jpg");
+#landing-page {
+    grid-area: landing-page;
+    background-image: url("../images/landing-page3.jpg");
+}
+
+#prework {
+    grid-area: prework;
+    background-image: url("../images/prework-study-guide.png");
 }
 
 .workGridArea {
+  background: var(--bckgrnd-transition);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
   cursor: pointer;
-  align-content: flex-end;
+  align-content: center;
+  justify-content: flex-start;
   margin: 5px;
+  border: 5px solid var(--cyan-color);
 }
+
+.workGridArea a {
+  padding: 5px 25px 5px 10px;
+  color: var(--bckgrnd-blck);
+  background-color: var(--cyan-color);
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: larger;
+}
+
 
 /* Contact section */
 #contact {
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 15% 10% 10% 10% 10%;
+    grid-template-columns: 5% 5% 16% 16% 16% 16%;
     grid-template-areas:
-    "contact-heading website github twitter email";
+    "contact-heading vertical-line website github twitter email";
     justify-items: center;
 }
 
 #contact-heading {
   grid-area: contact-heading;
+}
+
+.vertical-line {
+  grid-area: vertical-line;
 }
 
 #website {
@@ -296,8 +342,9 @@ header {
   grid-area: email;
 }
 
-.sectionHeading {
-  border-right: 5px solid mediumaquamarine;
-  padding-right: 15px;
+.contact-grid-element a {
+  color: var(--bckgrnd-blck);
+  font-size: 16px;
+  border-bottom: 2px solid var(--bckgrnd-blck);
 }
 
